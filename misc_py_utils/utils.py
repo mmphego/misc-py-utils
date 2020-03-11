@@ -6,9 +6,10 @@ from pprint import PrettyPrinter as pprint
 
 pprint = PrettyPrinter(indent=4).pprint
 
-# https://github.com/norikinishida/utils/blob/master/utils/utils.py
+
 def iterate_recursive_dict(dictionary, keys=()):
-    """Generator; walk through a recursive dict structure
+    """
+    Generator; walk through a recursive dict structure
 
     yields the compound key and value of each leaf.
 
@@ -79,7 +80,7 @@ class DictEval(object):
                 )
 
 
-class Structure(object):
+class Structure:
     """
     Base class for a data structure class
 
