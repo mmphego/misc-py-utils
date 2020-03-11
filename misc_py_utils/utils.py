@@ -39,7 +39,7 @@ def iterate_recursive_dict(dictionary, keys=()):
         yield (keys, dictionary)
 
 
-class DictEval(object):
+class DictToNamespace(object):
     """
     Convert `nested` dictionary into namespace
 
@@ -47,7 +47,7 @@ class DictEval(object):
     :example:
 
         >>> a_dict = {"x":1, "y": "foo", "z": "bar"}
-        >>> DictClass = DictEval(a_dict)
+        >>> DictClass = DictToNamespace(a_dict)
         >>> DictClass.x
         1
         >>> DictClass.y
@@ -59,7 +59,7 @@ class DictEval(object):
 
         # Works even with nested dicts
         >>> d = {'a': 1, 'b': {'c': 2}, 'd': ["hi", {'foo': "bar"}]}
-        >>> DictClass = DictEval(d)
+        >>> DictClass = DictToNamespace(d)
         >>> DictClass.b.c
         2
         >>> DictClass.d[1].foo
@@ -84,7 +84,7 @@ class Structure:
     """
     Base class for a data structure class
 
-    NB: No support for kwags
+    NB: No support for **kwags
 
     :type _fields: list
     :example:
